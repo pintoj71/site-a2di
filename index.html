@@ -1206,7 +1206,7 @@ document.getElementById('f_dpe').value=labels.dpe[dpe]||'—';
 document.getElementById('f_assainissement').value=labels.assainissement[assainissement]||'—';
 document.getElementById('f_diags').value=d.map(x=>'• '+x.name).join('\n');
 // URL de redirection après envoi
-document.getElementById('formNext').value=window.location.origin+window.location.pathname+'?envoye=1#simulateur';
+document.getElementById('formNext').value=window.location.origin+'/merci.html';
 showStep('results');currentStep=7;updateProgress();document.querySelectorAll('.sim-dot').forEach(x=>x.classList.add('done'))}
 
 // Afficher l'écran de succès si on revient d'une soumission
