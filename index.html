@@ -687,6 +687,10 @@ textarea.sim-input{resize:vertical;font-family:inherit;min-height:80px}
 .faq-item.open .faq-q::after{content:'−'}
 .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:.92rem;color:var(--text-light);line-height:1.7;padding:0}
 .faq-item.open .faq-a{max-height:300px;padding:0 0 22px}
+.faq-more{text-align:center;margin-top:28px}
+.faq-more-btn{padding:12px 28px;border-radius:50px;border:1.5px solid var(--navy);background:var(--white);color:var(--navy);font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit;transition:all .25s}
+.faq-more-btn:hover{background:var(--navy);color:var(--white)}
+.faq-more-btn[hidden]{display:none}
 footer{background:var(--navy);color:rgba(255,255,255,.6);padding:64px 0 32px}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
 .footer-brand{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:700;color:var(--white);margin-bottom:16px}.footer-brand span{color:var(--gold)}
@@ -954,6 +958,7 @@ Vous préférez nous contacter directement ?<br>
 <button class="faq-cat-btn" onclick="filterFaq('location',this)">Location</button>
 </div>
 <div class="faq-grid" id="faqGrid"></div>
+<div class="faq-more"><button type="button" class="faq-more-btn" id="faqMore" onclick="toggleFaqAll()"></button></div>
 </div></section>
 
 <section id="formation"><div class="container">
@@ -1279,9 +1284,10 @@ const faqData=[
 {cat:'location',q:"Un locataire peut-il exiger un diagnostic manquant ?",a:"Oui. En l'absence d'un diagnostic obligatoire, le locataire peut saisir le juge pour obtenir la résolution du bail ou une diminution du loyer."}
 ];
 
-let activeCategory='all';
+let activeCategory='all',faqShowAll=false;const FAQ_LIMIT=6;
+function toggleFaqAll(){faqShowAll=!faqShowAll;renderFaq();if(!faqShowAll)document.getElementById('faq').scrollIntoView({behavior:'smooth'})}
 const faqGrid=document.getElementById('faqGrid'),faqSearch=document.getElementById('faqSearch'),faqCountEl=document.getElementById('faqCount');
-function renderFaq(){const s=faqSearch.value.toLowerCase().trim();const f=faqData.filter(x=>(activeCategory==='all'||x.cat===activeCategory)&&(!s||x.q.toLowerCase().includes(s)||x.a.toLowerCase().includes(s)));faqCountEl.textContent=f.length+' question'+(f.length>1?'s':'');faqGrid.innerHTML=f.map(x=>'<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">'+x.q+'</button><div class="faq-a">'+x.a+'</div></div>').join('')}
+function renderFaq(){const s=faqSearch.value.toLowerCase().trim();const f=faqData.filter(x=>(activeCategory==='all'||x.cat===activeCategory)&&(!s||x.q.toLowerCase().includes(s)||x.a.toLowerCase().includes(s)));faqCountEl.textContent=f.length+' question'+(f.length>1?'s':'');const limited=!faqShowAll&&activeCategory==='all'&&!s;const shown=limited?f.slice(0,FAQ_LIMIT):f;const more=document.getElementById('faqMore');if(activeCategory==='all'&&!s&&f.length>FAQ_LIMIT){more.hidden=false;more.textContent=faqShowAll?'Réduire la FAQ ▴':'Voir les '+(f.length-FAQ_LIMIT)+' autres questions ▾'}else{more.hidden=true}faqGrid.innerHTML=shown.map(x=>'<div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">'+x.q+'</button><div class="faq-a">'+x.a+'</div></div>').join('')}
 function toggleFaq(btn){const item=btn.parentElement,was=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(x=>x.classList.remove('open'));if(!was)item.classList.add('open')}
 function filterFaq(cat,btn){activeCategory=cat;document.querySelectorAll('.faq-cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderFaq()}
 faqSearch.addEventListener('input',renderFaq);renderFaq();
