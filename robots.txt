@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://a2di71.fr/sitemap.xml
+Sitemap: https://a2di.fr/sitemap.xml
