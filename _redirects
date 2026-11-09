@@ -2,6 +2,16 @@
 # - l'accueil va vers le nouveau site
 # - tout autre chemin (liens "Accéder à mon dossier", paiement, login...) va vers l'espace client Liciel,
 #   chemin et paramètres conservés
+# Liens Liciel « Accéder à mon dossier » : accueil + paramètres (?login=...&clef_acces_direct=...)
+# -> espace client Liciel, paramètres recopiés. À garder AVANT les règles d'accueil.
+https://a2di71.fr/  login=:l clef_acces_direct=:c clef_acces_direct_verif=:v mclef=:m  https://a2di71.liciweb.com/?login=:l&clef_acces_direct=:c&clef_acces_direct_verif=:v&mclef=:m  301!
+https://www.a2di71.fr/  login=:l clef_acces_direct=:c clef_acces_direct_verif=:v mclef=:m  https://a2di71.liciweb.com/?login=:l&clef_acces_direct=:c&clef_acces_direct_verif=:v&mclef=:m  301!
+http://a2di71.fr/  login=:l clef_acces_direct=:c clef_acces_direct_verif=:v mclef=:m  https://a2di71.liciweb.com/?login=:l&clef_acces_direct=:c&clef_acces_direct_verif=:v&mclef=:m  301!
+http://www.a2di71.fr/  login=:l clef_acces_direct=:c clef_acces_direct_verif=:v mclef=:m  https://a2di71.liciweb.com/?login=:l&clef_acces_direct=:c&clef_acces_direct_verif=:v&mclef=:m  301!
+https://a2di71.fr/  login=:l  https://a2di71.liciweb.com/?login=:l  301!
+https://www.a2di71.fr/  login=:l  https://a2di71.liciweb.com/?login=:l  301!
+http://a2di71.fr/  login=:l  https://a2di71.liciweb.com/?login=:l  301!
+http://www.a2di71.fr/  login=:l  https://a2di71.liciweb.com/?login=:l  301!
 https://a2di71.fr/            https://a2di.fr/                        301!
 https://www.a2di71.fr/        https://a2di.fr/                        301!
 http://a2di71.fr/             https://a2di.fr/                        301!
