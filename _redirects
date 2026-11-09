@@ -1,0 +1,6 @@
+# Anciens liens de l'espace client Liciel (www.a2di71.fr/...) :
+# a2di71.fr redirige vers a2di.fr en gardant le chemin.
+# Toute adresse qui n'existe pas sur a2di.fr est renvoyée vers l'espace client Liciel,
+# avec le même chemin et les mêmes paramètres (lien "Accéder à mon dossier", paiement, etc.).
+# Règle non forcée : les vraies pages du site (/, /merci.html, images...) ne sont pas touchées.
+/*  https://a2di71.liciweb.com/:splat  302
