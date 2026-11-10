@@ -2,8 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://a2di.fr/</loc>
-    <lastmod>2026-11-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/diagnostic-dpe-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/diagnostic-amiante-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/diagnostic-plomb-crep-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/diagnostic-electricite-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/diagnostic-gaz-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/mesurage-loi-carrez-boutin-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/etat-des-risques-erp-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/controle-assainissement-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://a2di.fr/audit-energetique-chalon-sur-saone/</loc>
+    <lastmod>2026-11-10</lastmod>
   </url>
 </urlset>
