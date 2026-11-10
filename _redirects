@@ -2,6 +2,11 @@
 # - l'accueil va vers le nouveau site
 # - tout autre chemin (liens "Accéder à mon dossier", paiement, login...) va vers l'espace client Liciel,
 #   chemin et paramètres conservés
+# robots.txt de l'ancien domaine : autoriser Google (sinon il suit la redirection vers le robots.txt Liciel qui interdit tout)
+https://a2di71.fr/robots.txt  /robots-a2di71.txt  200!
+https://www.a2di71.fr/robots.txt  /robots-a2di71.txt  200!
+http://a2di71.fr/robots.txt  /robots-a2di71.txt  200!
+http://www.a2di71.fr/robots.txt  /robots-a2di71.txt  200!
 # Liens Liciel « Accéder à mon dossier » : accueil + paramètres (?login=...&clef_acces_direct=...)
 # -> espace client Liciel, paramètres recopiés. À garder AVANT les règles d'accueil.
 https://a2di71.fr/  login=:l clef_acces_direct=:c clef_acces_direct_verif=:v mclef=:m  https://a2di71.liciweb.com/?login=:l&clef_acces_direct=:c&clef_acces_direct_verif=:v&mclef=:m  301!
